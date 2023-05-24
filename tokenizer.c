@@ -50,9 +50,19 @@ void tokenize_input(char *input, char **args)
  */
 void handle_exit_command(char **args, char *input)
 {
-	if (args[0] != NULL && my_strcmp(args[0], "exit") == 0)
+	if (my_strcmp(args[0], "exit") == 0)
 	{
-		free(input);
-		exit(EXIT_SUCCESS);
+		if (args[1] != NULL)
+		{
+			int exit_status = _atoi(args[1]);
+
+			free(input);
+			exit(exit_status);
+		}
+		else
+		{
+			free(input);
+			exit(EXIT_SUCCESS);
+		}
 	}
 }

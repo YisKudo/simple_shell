@@ -13,6 +13,7 @@
 
 void tokenize_input(char *input, char **args);
 void handle_exit_command(char **args, char *input);
+int _atoi(char *s);
 void execute_shell(int argc, char *argv[], char **env);
 char *my_strchr(char *s, int c);
 char *my_strncpy(char *dest, const char *src, size_t n);
