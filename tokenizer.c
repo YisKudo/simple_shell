@@ -46,19 +46,13 @@ void tokenize_input(char *input, char **args)
 /**
  * handle_exit_command - Handles the exit command
  * @args: The array of arguments
- *
- * @input: The input string
+ * @input: input string
  */
 void handle_exit_command(char **args, char *input)
 {
-	if (args[0] == NULL)
-	{
-		return;
-	}
-	else if (my_strcmp(args[0], "exit") == 0)
+	if (args[0] != NULL && my_strcmp(args[0], "exit") == 0)
 	{
 		free(input);
 		exit(EXIT_SUCCESS);
 	}
 }
-
